@@ -87,13 +87,13 @@ curl -X POST "http://localhost:8000/users/register" \
 
 ### 2. Получение баланса
 ```bash
-curl -X GET "http://localhost:8000/balance/" \
+curl -u john:secret123 -X GET "http://localhost:8000/balance/" \
   -H "Authorization: Basic $(echo -n john:secret123 | base64)"
 ```
 
 ### 3. Пополнение баланса
 ```bash
-curl -X POST "http://localhost:8000/balance/deposit" \
+curl -u john:secret123 -X POST "http://localhost:8000/balance/deposit" \
   -H "Content-Type: application/json" \
   -H "Authorization: Basic $(echo -n john:secret123 | base64)" \
   -d '{"amount": 500.00}'
