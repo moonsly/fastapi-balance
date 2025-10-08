@@ -87,16 +87,18 @@ curl -X POST "http://localhost:8000/users/register" \
 
 ### 2. Получение баланса
 ```bash
-curl -u john:secret123 -X GET "http://localhost:8000/balance/" \
-  -H "Authorization: Basic $(echo -n john:secret123 | base64)"
+curl -u john:secret123 -X GET "http://localhost:8000/balance/"
+
+{"balance":"1008.00"}
 ```
 
 ### 3. Пополнение баланса
 ```bash
 curl -u john:secret123 -X POST "http://localhost:8000/balance/deposit" \
   -H "Content-Type: application/json" \
-  -H "Authorization: Basic $(echo -n john:secret123 | base64)" \
   -d '{"amount": 500.00}'
+
+{"message":"Баланс пополнен на 500.00. Новый баланс: 1008.00","balance":"1008.00"}
 ```
 
 [CURL_TESTS.md](CURL_TESTS.md) - другие API запросы с CURL
