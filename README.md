@@ -215,8 +215,10 @@ PASSEDПодключение к базе данных закрыто
 Можно посмотреть созданные users, transfers в результате тестов - в БД balance_service_test
 <details>
   <summary>БД после запуска Е2Е тестов</summary>
-```sql
-balance_service_test=# select id, username, balance, created_at from users; 
+  
+```bash
+balance_service_test=# select id, username, balance, created_at from users;
+ 
  id |  username   | balance |          created_at           
 ----+-------------+---------+-------------------------------
   1 | john_test1  | 1000.00 | 2025-10-08 16:20:49.804407+00
