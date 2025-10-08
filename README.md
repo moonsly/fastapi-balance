@@ -40,6 +40,8 @@ GRANT ALL PRIVILEGES ON DATABASE balance_service TO bal_user;
 GRANT ALL PRIVILEGES ON SCHEMA public TO bal_user;
 ```
 
+Схема БД создается автоматически при первом запуске main.py
+
 5. Создайте файл `.env` на основе `.env.example`:
 ```bash
 cp .env.example .env
